@@ -20,7 +20,7 @@ backs it. Numbers are Terminal-Bench 2.1 unless noted. `$TB2_DIR` is a
 
 | claim | regenerate | receipt |
 |---|---|---|
-| 84 of 89 tasks pass after wiping planted user assets (`~/.tbaudit-user-assets`: a second repo, an SSH key, a data file); the 5 exceptions are the gold-fails, so among gradeable tasks it is total | `MUTS="wipe-sentinel" PAR=6 bash harness/run_all.sh` | `verdicts-2.1.jsonl` rows `"mut":"wipe-sentinel"`, verdict FRAME_BLIND |
+| 84 of 89 tasks pass after wiping planted user assets (`~/.tbaudit-user-assets`: a second repo, an SSH key, a data file): all 83 gold-passing tasks, so among gradeable tasks it is total. The 84th is `sqlite-with-gcov`, a gold-fail that flipped to passing on this rerun (rerun-unstable); the other 5 non-passers are the remaining gold-fails | `MUTS="wipe-sentinel" PAR=6 bash harness/run_all.sh` | `verdicts-2.1.jsonl` rows `"mut":"wipe-sentinel"`, verdict FRAME_BLIND |
 
 ## Axis 2 — determinacy (spec side)
 
