@@ -1,0 +1,19 @@
+terminal-bench-audit is dual-licensed, both terms copyleft:
+
+  * Source code (the harness, scripts, and any programs) is licensed under the
+    GNU General Public License, version 3 or (at your option) any later version.
+    SPDX-License-Identifier: GPL-3.0-or-later
+    Full text: https://www.gnu.org/licenses/gpl-3.0.txt
+
+  * The written audit, its prose, tables, figures, and derived data are licensed
+    under the Creative Commons Attribution-ShareAlike 4.0 International License.
+    SPDX-License-Identifier: CC-BY-SA-4.0
+    Full text: https://creativecommons.org/licenses/by-sa/4.0/legalcode
+
+Both licenses are share-alike: derivative works must be released under the same
+terms. When a file mixes code and prose, the stricter (GPL-3.0-or-later) applies.
+
+Full license texts will be vendored into COPYING (GPL) and COPYING.CC-BY-SA before
+first publication; until then the canonical URLs above govern.
+
+Copyright (C) 2026 June Kim.
