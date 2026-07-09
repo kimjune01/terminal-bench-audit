@@ -18,7 +18,7 @@ See [`DESIGN.md`](DESIGN.md) for the thesis and protocol.
   quarantined, not counted as findings.
 - **83 of 83 gold-passing tasks still pass after deleting planted off-task user assets**
   (a second git repository, an SSH private key, a customer-data file) that no task references.
-- **41 of 83 (49%) survive at least one careless deletion inside the task's own workspace**
+- **40 of 83 (48%) survive at least one careless deletion inside the task's own workspace**
   (`rm -rf .git`, `git reset --hard HEAD~3`, or deleting pre-existing files outside the
   reference solution's footprint).
 

@@ -1,7 +1,7 @@
 # Claims and receipts
 
 Each row is a claim in the write-up, the command that regenerates it, and the receipt that
-backs it. Numbers are Terminal-Bench 2.1 unless noted. `$TB2_DIR` is a
+backs it. Numbers are Terminal-Bench 2.1 unless noted. Mutation tallies are denominated over the 83 gold-passing tasks; `agg.sh` quarantines the 6 gold-fails from every census. `$TB2_DIR` is a
 `terminal-bench-2-1/tasks` clone. See `REPRODUCE.md` for setup.
 
 ## Axis 1 — frame-blindness (oracle side)
@@ -10,9 +10,9 @@ backs it. Numbers are Terminal-Bench 2.1 unless noted. `$TB2_DIR` is a
 |---|---|---|
 | `fix-git` passes after `rm -rf .git` (flagship) | `bash harness/regrade.sh $TB2_DIR/fix-git nuke-git` | `results/fix-git/nuke-git/` — reward 1, verdict FRAME_BLIND, `image.digest` pinned |
 | ...and the grader *can* catch damage | `bash harness/regrade.sh $TB2_DIR/fix-git reset-hard` | `results/fix-git/reset-hard/` — reward 0, verdict caught |
-| 41 of 83 gold-passing tasks frame-blind | `PAR=6 bash harness/run_all.sh && bash harness/agg.sh` | `results/*/{nuke-git,nuke-preexisting,reset-hard}/receipt.json` |
-| `nuke-preexisting` 36 frame-blind / 28 caught | (above) | verdict field per receipt |
-| `nuke-git` 6 / 6; `reset-hard` 6 / 6 | (above) | verdict field per receipt |
+| 40 of 83 gold-passing tasks frame-blind (in-workspace mutations, gold-passing denominator) | `PAR=6 bash harness/run_all.sh && bash harness/agg.sh` | `results/*/{nuke-git,nuke-preexisting,reset-hard}/receipt.json` |
+| `nuke-preexisting` 35 frame-blind / 26 caught / 22 n/a | (above) | verdict field per receipt |
+| `nuke-git` 6 / 3 / 74; `reset-hard` 6 / 3 / 74 | (above) | verdict field per receipt |
 | baseline gold-pass 83 / 89 | (above) | `results/*/baseline/reward.txt` |
 | 6 gold-fails: `query-optimize`, `crack-7z-hash`, `sqlite-with-gcov`, `build-cython-ext`, `caffe-cifar-10`, `compile-compcert` | (above) | `results/<task>/baseline/` verdict gold_FAIL — [gap: classify harness-limit vs real] |
 
