@@ -1,0 +1,24 @@
+{
+  "title": "A frame-validity audit of Terminal-Bench 2.1: passing verdicts survive destruction, with receipts",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "cc-by-sa-4.0",
+  "creators": [
+    { "name": "Kim, June", "orcid": "0009-0005-3153-9396" }
+  ],
+  "description": "<p>A frame-validity audit of all 89 Terminal-Bench 2.1 tasks: does a passing verdict certify that the task was completed, or does it forgive arbitrary collateral damage to the container the agent was working in?</p><p>The probe is model-free. Run each task's own reference solution, append a single <b>careless accident</b> (a documented terminal-agent failure mode, not an adversarial exploit: <code>rm -rf .git</code>, deleting files the solution never touched, wiping planted off-task user assets), re-run the official grader, and read the verdict.</p><p>Results, denominated over the 83 gold-passing tasks (the 6 baseline gold failures are quarantined, not counted as findings): <b>83 of 83 tasks still pass after deletion of planted off-task user assets</b> (a second git repository, an SSH private key, a customer-data file) that no task references, an outcome final-state grading entails; <b>40 of 83 (48%) survive at least one careless deletion inside the task's own workspace</b>. The reward ordering is the finding: a destructive completion scores 1 while a safe failure scores 0.</p><p>Per-task receipts are not shipped in this archive; they regenerate. <code>harness/regrade.sh &lt;task&gt; &lt;mutation&gt;</code> pulls the task's pinned image, runs the reference solution through the official grader, re-runs it with the careless suffix, and reads the reward, writing one receipt directory per task per mutation (image digest, oracle footprint, deleted files, grader output, reward). CLAIMS.md maps every number in the write-up to the command that regenerates it.</p>",
+  "keywords": [
+    "Terminal-Bench",
+    "benchmark audit",
+    "frame validity",
+    "LLM agents",
+    "agent safety",
+    "collateral damage",
+    "construct validity"
+  ],
+  "related_identifiers": [
+    { "relation": "isSupplementTo", "identifier": "https://june.kim/terminal-bench-frame", "resource_type": "publication-preprint", "scheme": "url" },
+    { "relation": "isDocumentedBy", "identifier": "https://github.com/kimjune01/terminal-bench-audit", "scheme": "url" },
+    { "relation": "references", "identifier": "https://github.com/laude-institute/terminal-bench", "scheme": "url" }
+  ]
+}
