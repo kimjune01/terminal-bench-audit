@@ -4,6 +4,8 @@ A frame-validity audit of [Terminal-Bench 2.1](https://github.com/laude-institut
 does a passing verdict certify that the task was completed, or does it forgive arbitrary
 collateral damage to the container the agent was working in?
 
+*Archived on Zenodo: [doi.org/10.5281/zenodo.21463236](https://doi.org/10.5281/zenodo.21463236). Per-task receipts regenerate via `harness/regrade.sh` rather than ship in the archive. Submitted to the Terminal-Bench maintainers for right of reply at [laude-institute/terminal-bench#1459](https://github.com/laude-institute/terminal-bench/issues/1459), with the fix implemented at [harbor-framework/harbor#2266](https://github.com/harbor-framework/harbor/pull/2266); the offer to incorporate corrections stands.*
+
 Terminal-Bench grades **properties of the final container state** and deliberately does not
 inspect the agent's commands. It has the fail-to-pass half of SWE-bench's contract and no
 pass-to-pass frame: no set of properties a passing solution must leave undisturbed. This
